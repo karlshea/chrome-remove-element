@@ -1,7 +1,8 @@
 {
   "name": "Remove Element",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Creates a contextual menu item to remove an element from the DOM",
+  "manifest_version": 2,
   "icons": {
     "48": "icon48.png",
     "128": "icon128.png"
@@ -12,14 +13,20 @@
     "http://*/*",
     "https://*/*"
   ],
-  "background_page": "background.html",
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
   "content_scripts": [
     {
       "matches": [
-		"http://*/*",
-		"https://*/*"
+        "http://*/*",
+        "https://*/*"
       ],
-      "js": ["remove.js"]
+      "js": [
+        "remove.js"
+      ]
     }
   ]
 }
