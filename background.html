@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			chrome.contextMenus.create({
+				contexts: ['all'],
+				title: "Remove Element",
+				onclick: function(info, tab) {
+					chrome.tabs.sendRequest(tab.id, 'remove');
+				}
+			});
+		</script>
+	</body>
+</html>
