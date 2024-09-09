@@ -1,7 +1,13 @@
-chrome.contextMenus.create({
-  contexts: ['all'],
-  title: 'Remove Element',
-  onclick: function(info, tab) {
-    chrome.tabs.sendRequest(tab.id, 'remove');
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.contextMenus.create({
+    id: 'remove-element',
+    title: 'Remove Element',
+    contexts: ['all'],
+  });
+});
+
+chrome.contextMenus.onClicked.addListener((item, tab) => {
+  if (item.menuItemId === 'remove-element') {
+    chrome.tabs.sendMessage(tab.id, { message: "remove" });
   }
 });
