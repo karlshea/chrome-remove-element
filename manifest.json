@@ -7,10 +7,7 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "permissions": [
-    "contextMenus",
-    "tabs"
-  ],
+  "permissions": ["contextMenus"],
   "host_permissions": [
     "http://*/*",
     "https://*/*"
